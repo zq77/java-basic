@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  
+  <filter>
+  	<filter-name>UserFilter</filter-name>
+  	<filter-class>com.z.filter.UserFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>UserFilter</filter-name>
+  	<!-- 所有/tx下的文件都要被过滤 -->
+  	<url-pattern>/tx/*</url-pattern> 
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.z.servlet.UserServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/tx/userServlet</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
