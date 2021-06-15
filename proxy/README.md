@@ -1,0 +1,3 @@
+```
+simple as java Proxy
+```
